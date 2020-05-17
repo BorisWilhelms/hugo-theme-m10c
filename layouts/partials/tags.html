@@ -1,0 +1,4 @@
+{{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
+{{ range .Params.tags }}
+    <a class="tag" href="/tags/{{ . | urlize }}">{{ . }}</a>
+{{- end -}}

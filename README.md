@@ -31,6 +31,7 @@ In your `config.toml` file, define the following variables in `params`:
 - `author`: Name of the author
 - `description`: Short description of the author
 - `avatar`: Path of file containing the author avatar image
+- `favicong`: Path of file containing the favicon
 
 To add a social link, add the following lines in `params`:
 

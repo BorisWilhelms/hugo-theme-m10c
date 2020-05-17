@@ -15,6 +15,21 @@
   padding: 2.5rem;
 }
 
+.app-header-menu {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    padding: 0.4em 0;
+    &:not(:last-child) {
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+    }
+
+  }
+}
+
 .app-header-social {
   font-size: 2em;
   color: $lightest-color;

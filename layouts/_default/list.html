@@ -2,13 +2,17 @@
   <article>
     <h1>{{ .Title }}</h1>
     <ul class="posts-list">
-      {{ range $index, $element := .Paginator.Pages }}
+      {{ range $index, $element := where .Paginator.Pages "Section" "post" }}
         <li class="posts-list-item">
-          <a class="posts-list-item-title" href="{{ .Permalink }}">{{ .Title }}</a>
+          <a class="posts-list-item-title" href="{{ .RelPermalink }}#{{ .Title | anchorize }}">{{ .Title }}</a>
           <span class="posts-list-item-description">
-            {{ partial "icon.html" (dict "ctx" $ "name" "clock") }} {{ .ReadingTime }} min read -
-            {{ .PublishDate.Format "Jan 2, 2006" }}
+            {{ partial "publishdate.html" . }} -
+            {{ partial "readingtime.html" . }} -
+            {{ partial "tags.html" . }}
           </span>
+          <p>
+            {{ .Summary }}
+          </p>
         </li>
       {{ end }}
     </ul>
